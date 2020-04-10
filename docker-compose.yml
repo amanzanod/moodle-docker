@@ -1,0 +1,15 @@
+version: '3'
+services:
+  moodle:
+    build: moodle/.
+    container_name: moodle
+    env_file:
+      - moodle/.env
+    ports:
+      - "80:80"
+    networks:
+      - moodle
+    volumes:
+      - ./moodle:/var/www/html
+    stdin_open: true
+    tty: true
